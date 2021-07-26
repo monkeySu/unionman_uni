@@ -1,0 +1,25 @@
+{
+  "code": 0,
+  "data": {
+    "title": "九联uni-app框架",
+    "records": [
+      {
+        "name": "列表文字",
+        "icon": {
+          "color": "#222",
+          "size": "22",
+          "type": "checkbox-filled"
+        }
+      },
+      {
+        "name": "第二个列表",
+        "icon": {
+          "color": "#222",
+          "size": "22",
+          "type": "camera"
+        }
+      }
+    ]
+  },
+  "message": "success"
+}
