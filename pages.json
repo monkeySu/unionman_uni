@@ -2,10 +2,36 @@
   "pages": [
     //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
-      "path": "pages/index/index",
+      "path": "pages/index/Index",
       "style": {
         "navigationBarTitleText": "九联uni-app框架",
         "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/map/Index",
+      "style": {
+        "navigationBarTitleText": "电子地图",
+        "app-plus": {
+          "titleNView": {
+            "backgroundImage": "linear-gradient(to top, #235bf6,  #52b3f7)",
+            "titleColor": "#fff"
+          },
+          "subNVues": [
+            {
+              "id": "baidu-map",
+              "path": "pages/map/subnvue/BaiduMap",
+              "style": {
+                "position": "static",
+                "width": "100%",
+                "top": "0rpx",
+                "bottom": "90rpx",
+                "zindex": 1,
+                "background": "transparent"
+              }
+            }
+          ]
+        }
       }
     }
   ],

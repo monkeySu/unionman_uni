@@ -6,6 +6,7 @@
  * @Description: file content
  */
 export const formatData = data => {
+	console.log(data)
   return {
     ...data,
     list: data.records.map((item, index) => {

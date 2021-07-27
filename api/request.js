@@ -2,7 +2,7 @@
  * @Author: ruixin
  * @Date: 2021-05-24 09:51:00
  * @LastEditors: ruixin
- * @LastEditTime: 2021-07-26 10:45:01
+ * @LastEditTime: 2021-07-27 09:41:21
  * @Description: 请求的全局封装方法
  */
 
@@ -57,55 +57,75 @@ const request = (url, params = {}, config = {}) => {
 };
 
 const requestFun = (url, params, config) => {
-  return request(url, params, config).catch(err => {
-    const hideError = !!config.hideError;
-    if (!hideError) {
-      uni.showToast({
-        title: `${err.code}${err.message}`,
-        icon: 'none',
-        mask: true
+  return new Promise((resolve, reject) => {
+    request(url, params, config)
+      .then(res => {
+        resolve(res);
+      })
+      .catch(err => {
+        const hideError = !!config.hideError;
+        if (!hideError) {
+          uni.showToast({
+            title: `${err.code}${err.message}`,
+            icon: 'none',
+            mask: true
+          });
+        }
+        return err;
       });
-    }
-    return err;
   });
 };
 
 export const postBodyRequest = (url, data, config = {}) => {
-  return requestFun(url, {
-    data,
-    ...config,
-    method: 'POST'
-  });
+  return requestFun(
+    url,
+    {
+      data,
+      method: 'POST'
+    },
+    config
+  );
 };
 
 export const getRequest = (url, data, config = {}) => {
-  return requestFun(url, {
-    data,
-    ...config,
-    method: 'GET'
-  });
+  return requestFun(
+    url,
+    {
+      data,
+      method: 'GET'
+    },
+    config
+  );
 };
 
 export const putBodyRequest = (url, data, config = {}) => {
-  return requestFun(url, {
-    data,
-    ...config,
-    method: 'PUT'
-  });
+  return requestFun(
+    url,
+    {
+      data,
+      ...config,
+      method: 'PUT'
+    },
+    config
+  );
 };
 
 export const deleteBodyRequest = (url, data, config = {}) => {
-  return requestFun(url, {
-    data,
-    ...config,
-    method: 'DElETE'
-  });
+  return requestFun(
+    url,
+    {
+      data,
+      method: 'DElETE'
+    },
+    config
+  );
 };
 
-export const postFormRequest = (url, formData) => {
+export const postFormRequest = (url, formData, config = {}) => {
   return requestFun(url, {
     method: 'POST',
     data: formData,
+    config,
     header: {
       'Content-Type': 'application/x-www-form-urlencoded'
     }

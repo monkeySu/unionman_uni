@@ -1,0 +1,55 @@
+<!--
+ * @Author: zequan.wu
+ * @Date: 2021-05-25 12:14:07
+ * @LastEditors: ruixin
+ * @LastEditTime: 2021-07-27 09:46:05
+ * @Description: file content
+-->
+
+<template>
+	<div class="map">
+		<web-view ref="webview" style="flex: 1;" src="/hybrid/html/map.html" @message="handleMessage"
+			@onPostMessage="handleMessage"></web-view>
+	</div>
+</template>
+
+<script>
+	export default {
+		name: 'MapControlBottonList',
+		data() {
+			return {
+
+			};
+		},
+		watch: {
+
+		},
+		created() {
+
+		},
+
+		mounted() {
+
+		},
+		onLoad() {
+
+		},
+		beforeDestroy() {
+
+		},
+		methods: {
+
+		}
+	}
+</script>
+
+<style>
+	.map {
+		flex-direction: column;
+		/* height: 100vh; */
+		justify-content: flex-start;
+		left: 0rpx;
+		padding: 0rpx;
+		margin: 0rpx;
+	}
+</style>

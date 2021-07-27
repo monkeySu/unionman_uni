@@ -2,7 +2,7 @@
  * @Author: ruixin
  * @Date: 2021-06-08 09:23:33
  * @LastEditors: ruixin
- * @LastEditTime: 2021-07-26 09:29:48
+ * @LastEditTime: 2021-07-27 09:43:22
  * @Description: 
 -->
 <template>
@@ -23,6 +23,7 @@
         />
       </uni-list>
     </view>
+    <button @click="navigateToMap">跳转地图</button>
   </scroll-view>
 </template>
 
@@ -40,14 +41,23 @@ export default {
   },
   methods: {
     getData() {
-      globalService.getData().then(res => {
-        this.title = res.title;
-        this.list = res.list;
-      });
+      globalService
+        .getData()
+        .then(res => {
+          this.title = res.title;
+          this.list = res.list;
+        })
+        .catch(err => {
+          console.log(err);
+        });
     },
 
     onClick(e) {
       console.log(e);
+    },
+
+    navigateToMap() {
+      uni.navigateTo({ url: '/pages/map/Index' });
     }
   }
 };
