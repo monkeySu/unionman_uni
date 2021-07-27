@@ -2,7 +2,7 @@
  * @Author: ruixin
  * @Date: 2021-07-27 08:47:15
  * @LastEditors: ruixin
- * @LastEditTime: 2021-07-27 10:04:56
+ * @LastEditTime: 2021-07-27 10:38:00
  * @Description:
 -->
 
@@ -22,13 +22,15 @@
 
 自定义模板地址（完整复制即可）
 
-`direct:https://github.com/monkeySu/unionman_uni.git`
+`monkeySu/unionman_uni`
+
+github 地址： https://github.com/monkeySu/unionman_uni
 
 vue-cli 使用拉取仓库的插件是 https://www.npmjs.com/package/download-git-repo 可以了解一下
 
 ###安装额外的 npm 包
 
-####sass & sass-loader
+####sass & sass-loader@6.0.0 & node-sass@latest
 **https://www.sass.hk/**
 
 ####dayjs
